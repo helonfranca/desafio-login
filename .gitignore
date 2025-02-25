@@ -1,0 +1,47 @@
+# Ignora o ambiente virtual
+venv/
+.env/
+
+# Ignora arquivos de banco de dados SQLite
+*.sqlite3
+*.db
+
+# Ignora arquivos de configuração local
+.env
+*.env
+.env.local
+.env.development
+.env.production
+
+# Ignora arquivos de IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*.pyc
+__pycache__/
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos de dependências do Python
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Ignora arquivos de cache do Python
+.pytest_cache/
+.mypy_cache/
+
+# Ignora arquivos de migrações (opcional, dependendo do seu fluxo de trabalho)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Ignora arquivos estáticos coletados (se aplicável)
+staticfiles/
+mediafiles/
+
+# Ignora arquivos do sistema operacional
+.DS_Store
+Thumbs.db
