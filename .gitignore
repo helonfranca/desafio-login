@@ -45,3 +45,5 @@ mediafiles/
 # Ignora arquivos do sistema operacional
 .DS_Store
 Thumbs.db
+
+db.sqlite3
