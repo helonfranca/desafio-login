@@ -2,7 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import LoginForm, RegisterForm
+from django.contrib.auth.decorators import user_passes_test, login_required
 
+def redirecionar_se_logado(user):
+    return not user.is_authenticated
+
+@user_passes_test(redirecionar_se_logado, login_url='/menu/')
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -23,7 +28,7 @@ def login_view(request):
     
     return render(request, 'auth/login.html', {'form': form})
 
-
+@user_passes_test(redirecionar_se_logado, login_url='/menu/')
 def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -41,6 +46,6 @@ def register_view(request):
     
     return render(request, 'auth/register.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def menu_view(request):
     return render(request, 'menu/menu.html')
