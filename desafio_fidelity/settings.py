@@ -29,6 +29,13 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.User'
 
+STATIC_URL = 'static/'
+
+# Diretório para arquivos estáticos dentro dos apps
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
