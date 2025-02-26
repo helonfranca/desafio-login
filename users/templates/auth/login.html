@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
-  <script src="{% static 'users/js/form-validation.js' %}" defer></script>
+  <script src="{% static 'users/js/form-validations.js' %}" defer></script>
   <script src="{% static 'users/js/password-toggle.js' %}" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -15,7 +15,6 @@
 <body>
   <div class="card">
     <h2>Login</h2>
-
     {% if messages %}
     <div class="messages" id="errorMessages">
       {% for message in messages %}

@@ -11,9 +11,9 @@
 
 <body>
   <div class="welcome-container">
-    <h1>Bem-vindo(a), {{ user.username }}!</h1>
-    <p>Estamos felizes em tê-lo no Fidelity Pesquisas Cadastrais.</p>
-    <a href="" class="logout-btn">Sair</a>
+    <h1>Bem-vindo, {{ user.username }}!</h1>
+    <p>Estamos felizes em tê-lo conosco na Fidelity Pesquisas Cadastrais.</p>
+    <a href="{% url 'auth:logout' %}" class="logout-btn">Sair</a>
   </div>
 </body>
 

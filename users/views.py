@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth.decorators import user_passes_test, login_required
@@ -49,3 +49,7 @@ def register_view(request):
 @login_required(login_url='/login/')
 def menu_view(request):
     return render(request, 'menu/menu.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('auth:login')  
